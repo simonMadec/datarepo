@@ -12,7 +12,7 @@ data/
 old/
 
 #normInfoStore
-old/
+normInfoStore/
 
 #numpy
 *.npy
