@@ -14,8 +14,8 @@ old/
 #normInfoStore
 old/
 
-#py
-*.py
+#numpy
+*.npy
 *.tif
 *.tiff
 *.png
