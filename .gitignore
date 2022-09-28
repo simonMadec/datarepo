@@ -11,6 +11,10 @@ data/
 #old
 old/
 
+#numba
+numba-progress/
+numba-progress
+
 #normInfoStore
 normInfoStore/
 normInfoStore

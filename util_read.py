@@ -16,6 +16,7 @@ def read_S2 (lst,bounds):
                 ts_array = ds.read()
             else:
                 ts_array = ds.read(window=from_bounds(bounds[0], bounds[1], bounds[2], bounds[3], transform=ds.profile['transform']))
+            ts_array = ts_array.astype("float32")
             ts_array = np.moveaxis(ts_array,0,-1)
             ts_array = (ts_array - np.min(ts_array))/(np.max(ts_array) - np.min(ts_array))
             # cellsize = ds.profile['transform'][0]
@@ -60,6 +61,7 @@ def read_S1 (lst,bounds):
             else:
                 ts_array = ds.read(window=from_bounds(bounds[0], bounds[1], bounds[2], bounds[3], transform=ds.profile['transform']))
             # ts_array = ds.read()
+            ts_array = ts_array.astype("float32")
             ts_array = np.moveaxis(ts_array,0,-1)
             ts_array_log = -10*np.log(ts_array)
             ts_array_log = (ts_array_log - np.min(ts_array_log))/(np.max(ts_array_log) - np.min(ts_array_log))
@@ -98,6 +100,7 @@ def read_ms_pan (ts, bounds):
             ts_array = ds.read()
         else:
             ts_array = ds.read(window=from_bounds(bounds[0], bounds[1], bounds[2], bounds[3], transform=ds.profile['transform']))
+        ts_array = ts_array.astype("float32")
         ts_array = np.moveaxis(ts_array,0,-1)
         ts_array = (ts_array - np.min(ts_array))/(np.max(ts_array) - np.min(ts_array))
         cellsize = ds.profile['transform'][0]

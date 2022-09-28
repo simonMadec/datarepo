@@ -18,7 +18,7 @@ root_data = "/home/simon/DATA/land_use_classification/data"
 
 # ref = "150cm" 
 # ref = "10m"
-for dd in ["data_reunion_origin","data_dordogne_origin"]:
+for dd in ["data_dordogne_origin","data_reunion_origin"]:
     for ref in ["150cm","10m"]:
     
         # _out150cmGSD bc it is the reference
@@ -44,7 +44,6 @@ for dd in ["data_reunion_origin","data_dordogne_origin"]:
 
         path_out = str(Path(root_data) / f"{dd}_{ref}")
         Path(path_out).mkdir(parents=True, exist_ok=True)
-
         # temp = {}
         # for x in S1_list_path + S2_list_path + SpotMs_list_path + SpotP_list_path:
         #     with rasterio.open (x) as ds :
